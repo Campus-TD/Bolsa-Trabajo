@@ -15,43 +15,4 @@ class Jobs extends Component
         $this->jobs = Job::all();
         return view('livewire.jobs');
     }
-
-    public function create()
-    {
-        return redirect()->to('/form');
-    }
-
-    public function storeJob()
-    {
-        $this->validate([
-            'jobname' => 'required',
-            'business' => 'required',
-            'email' => 'required',
-            'activities' => 'required',
-            'softskills' => 'required',
-            'hardskills' => 'required',
-            'knowledge' => 'required',
-        ]);
-
-        Job::create([
-            'jobname' => $this->jobname,
-            'business' => $this->business,
-            'email' => $this->email,
-            'activities' => $this->activities,
-            'softskills' => $this->softskills,
-            'hardskills' => $this->hardskills,
-            'knowledge' => $this->knowledge,
-        ]);
-
-
-        Job::updateOrCreate(['id' => $this->id], [
-            'jobname' => $this->jobname,
-            'business' => $this->business,
-            'email' => $this->email,
-            'activities' => $this->activities,
-            'softskills' => $this->softskills,
-            'hardskills' => $this->hardskills,
-            'knowledge' => $this->knowledge,
-        ]);
-    }
 }

@@ -11,7 +11,7 @@
     <div class="container">
         <div class="row">
             <div class="text-right">
-                <button wire:click="create()" class="btn btn-success float-right">Agregar Empleo</button>
+                <a href="empleos/create" class="btn btn-success float-right">Agregar Empleo</a>
             </div>
         </div>
     </div>
