@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\JobController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Jobs;
 
@@ -17,6 +18,9 @@ use App\Http\Livewire\Jobs;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('empleos', 'App\Http\Controllers\JobController');
+Route::post('empleos/create', 'App\Http\Controllers\JobController@store');
 
 Route::middleware([
     'auth:sanctum',

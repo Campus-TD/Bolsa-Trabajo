@@ -8,14 +8,14 @@
     <!-- FORM -->
 
     <div class="spacer" style="height: 50px;"></div>
-    <form>
+    <form  method="POST" action="/empleos">
     @csrf
     <div class="container text-center">
         <div class="row">
             <div class="col-12">
                 <div class="input-group">
                     <span class="input-group-text">Empleo</span>
-                    <input type="text" aria-label="First name" class="form-control" id="jobname" wire:model="jobname">
+                    <input type="text" aria-label="First name" class="form-control" name="jobname">
                 </div>
             </div>
         </div>
@@ -24,13 +24,13 @@
             <div class="col-6">
                 <div class="input-group">
                     <span class="input-group-text">Empresa</span>
-                    <input type="text" aria-label="First name" class="form-control" id="business" wire:model="business">
+                    <input type="text" aria-label="First name" class="form-control" name="business">
                 </div>
             </div>
             <div class="col-6">
                 <div class="input-group">
                     <span class="input-group-text">Correo Electrónico</span>
-                    <input type="text" aria-label="First name" class="form-control" id="email" wire:model="email">
+                    <input type="text" aria-label="First name" class="form-control" name="email">
                 </div>
             </div>
         </div>
@@ -39,7 +39,7 @@
             <div class="col-12">
                 <div class="input-group">
                     <span class="input-group-text">Actividades</span>
-                    <textarea class="form-control" id="activities" wire:model="activities"></textarea>
+                    <textarea class="form-control" name="activities"></textarea>
                 </div>
             </div>
         </div>
@@ -56,7 +56,7 @@
             </div>
             <div class="col-5">
                 <div class="input-group">
-                    <textarea rows="1" class="form-control habilidadesBlandas" aria-label="Habilidades Blandas" disabled  id="softskills" wire:model="softskills"></textarea>
+                    <textarea rows="1" class="form-control habilidadesBlandas" aria-label="Habilidades Blandas"  name="softskills" data-validation="required" data-validation="custom" data-validation-regexp="^[a-zA-Z ]{2,30}$"></textarea>
                   </div>
             </div>
         </div>
@@ -73,7 +73,7 @@
             </div>
             <div class="col-5">
                 <div class="input-group">
-                    <textarea rows="1" class="form-control habilidadesDuras" aria-label="Habilidades Duras" disabled id="hardskills" wire:model="hardskills"></textarea>
+                    <textarea rows="1" class="form-control habilidadesDuras" aria-label="Habilidades Duras" name="hardskills" data-validation="required" data-validation="custom" data-validation-regexp="^[a-zA-Z ]{2,30}$"></textarea>
                   </div>
             </div>
         </div>
@@ -90,7 +90,7 @@
             </div>
             <div class="col-5">
                 <div class="input-group">
-                    <textarea rows="1" class="form-control conocimientos" aria-label="Conocimientos" disabled id="knowledge" wire:model="knowledge"></textarea>
+                    <textarea rows="1" class="form-control conocimientos" aria-label="Conocimientos" name="knowledge" data-validation="required" data-validation="custom" data-validation-regexp="^[a-zA-Z ]{2,30}$"></textarea>
                 </div>
             </div>
         </div>
@@ -98,7 +98,7 @@
         <div class="row ">
             <div class="col-5">
                 <div class="input-group">
-                    <button wire:click="storeJob()" class="btn btn-success float-right" type="button" value="">Guardar</button>
+                    <button type="submit" class="btn btn-success float-right">Guardar</button>
                     &nbsp;&nbsp;&nbsp;
                     <button class="btn btn-danger" type="button" value="">Cancelar</button>
                 </div>
