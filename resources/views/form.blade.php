@@ -8,8 +8,8 @@
     <!-- FORM -->
 
     <div class="spacer" style="height: 50px;"></div>
-    <form>
-    @csrf
+    <form wire:submit="storeJob()">
+        @csrf
     <div class="container text-center">
         <div class="row">
             <div class="col-12">
@@ -98,7 +98,7 @@
         <div class="row ">
             <div class="col-5">
                 <div class="input-group">
-                    <button wire:click="storeJob()" class="btn btn-success float-right" type="button" value="">Guardar</button>
+                    <button class="btn btn-success float-right">Guardar</button>
                     &nbsp;&nbsp;&nbsp;
                     <button class="btn btn-danger" type="button" value="">Cancelar</button>
                 </div>
