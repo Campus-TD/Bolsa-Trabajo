@@ -47,7 +47,7 @@ class JobController extends Controller
             ]
         );
         $job->save();
-        redirect()->route('empleos');
+        return redirect()->route('empleos');
     }
 
     /**
