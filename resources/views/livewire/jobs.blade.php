@@ -1,10 +1,5 @@
 <div>
     {{-- Stop trying to control. --}}
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Empleos') }}
-        </h2>
-    </x-slot>
 
     <!-- Add button in form-->
     <div class="spacer" style="height: 30px;"></div>
@@ -29,6 +24,7 @@
                  <a href="#" class="btn btn-secondary btn-block">Ver Detalles</a>
               </div>
             </div>
+            <br>
           </div>
         @endforeach
         </div>
