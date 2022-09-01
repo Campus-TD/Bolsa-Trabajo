@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <title>Carrera</title>
+    <title>Año</title>
 </head>
 
 <body>
@@ -20,21 +20,18 @@
             <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
                 <div class="flex justify-center">
                     <div class="">
-                        <form action="{{ route('carreras.store') }}" method="POST">
+                        <form action="{{ route('años.store') }}" method="POST">
                             @csrf
                             <div class="overflow-hidden rounded shadow-2xl shadow-cyan-800">
                                 <div class="bg-white px-16 py-14">
-                                    <label for="carrera"
+                                    <label for="año"
                                         class="block bg-gradient-to-r from-cyan-400 via-indigo-500 to-violet-600 bg-clip-text text-left text-8xl font-bold text-transparent">
-                                        Nueva Carrera
+                                        Nueva Año
                                     </label>
                                     <div class="mt-8 flex">
-                                        <input required type="text" name="acronym" id="acronym"
-                                            class="focus-visible block w-20 border-none border-transparent text-2xl text-red-900 focus:border-transparent focus:ring-0"
-                                            placeholder="ISC">
-                                        <input required type="text" name="name" id="carrera"
+                                        <input required type="text" name="value" id="año"
                                             class="focus-visible block w-full border-none border-transparent text-2xl text-red-900 focus:border-transparent focus:ring-0"
-                                            placeholder="Ingeniería en Sistemas Computacionales">
+                                            placeholder="Ingresar aquí">
                                     </div>
                                 </div>
                                 <div class="bg-gray-50 px-4 py-3 text-right sm:px-6">

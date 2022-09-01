@@ -17,7 +17,7 @@
             <div class="flex">
 
                 <div class="mt-5">
-                    <button onclick="location.href='{{ route('carreras.create') }}'" type="button"
+                    <button onclick="location.href='{{ route('años.create') }}'" type="button"
                         class="inline-flex rounded bg-violet-600 py-2 px-3 text-sm font-medium text-white shadow-sm transition-all duration-500 hover:bg-violet-300 focus:outline-none">Nuevo</button>
                 </div>
 
@@ -27,8 +27,7 @@
             <dl>
                 <div class="bg-white px-4 py-5 grid grid-cols-12">
                     <div class="text-sm  font-medium">id</div>
-                    <div class="mt-1 text-sm font-medium  text-gray-900 sm:mt-0">Siglas</div>
-                    <div class="mt-1 text-sm font-medium col-span-8 text-gray-900 sm:mt-0">Nombre</div>
+                    <div class="mt-1 text-sm font-medium col-span-8 text-gray-900 sm:mt-0">Año</div>
                     <div class="mt-1 text-sm font-medium text-gray-900 sm:mt-0">Acciones</div>
 
                 </div>
@@ -36,13 +35,12 @@
                     $bandera = true;
                     $color = 'bg-gray-100';
                 @endphp
-                @foreach ($careers as $career)
+                @foreach ($ages as $age)
                     <div class="{{ $color }} px-4 py-5 grid grid-cols-12">
-                        <div class="text-sm  font-medium text-gray-500">{{ $career->id }}</div>
-                        <div class="mt-1 text-sm   text-gray-900 sm:mt-0">{{ $career->acronym }}</div>
-                        <div class="mt-1 text-sm col-span-8 text-gray-900 sm:mt-0">{{ $career->name }}</div>
+                        <div class="text-sm  font-medium text-gray-500">{{ $age->id }}</div>
+                        <div class="mt-1 text-sm col-span-8 text-gray-900 sm:mt-0">{{ $age->value }}</div>
                         <div class="mt-1 sm:mt-0">
-                            <form action="/carreras/{{ $career->id }}" method="POST">
+                            <form action="/años/{{ $age->id }}" method="POST">
                                 @csrf
                                 {{ method_field('DELETE') }}
                                 <button type="submit"
