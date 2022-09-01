@@ -14,7 +14,11 @@ class EmploymentController extends Controller
      */
     public function index()
     {
-        //
+        $employments = Employment::orderBy('id', 'desc')->get();
+        return view('employments.index', [
+            'employments' => $employments,
+            'title' => 'Empleos',
+        ]);
     }
 
     /**
@@ -24,7 +28,7 @@ class EmploymentController extends Controller
      */
     public function create()
     {
-        //
+        return view('employments.create', []);
     }
 
     /**
@@ -35,7 +39,8 @@ class EmploymentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Employment::create($request->all());
+        return redirect()->route('empleos.index');
     }
 
     /**
@@ -78,8 +83,9 @@ class EmploymentController extends Controller
      * @param  \App\Models\Employment  $employment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Employment $employment)
+    public function destroy($id)
     {
-        //
+        Employment::destroy($id);
+        return redirect()->route('empleos.index');
     }
 }
