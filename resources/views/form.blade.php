@@ -8,6 +8,94 @@
     <!-- FORM -->
 
     <div class="spacer" style="height: 50px;"></div>
+    <div class="container text-center">
+        
+    <div class="card">
+        <br>
+        <div class="row">
+            <div class="col-3">
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="inputGroupSelect01">Carrera</label>
+                    <select class="form-select" id="inputGroupSelect01">
+                        <option selected>ISC</option>
+                        <option value="1">ISC</option>
+                        <option value="2">ISC</option>
+                        <option value="3">IG</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="inputGroupSelect01">Bolsa de Trabajo</label>
+                    <select class="form-select" id="inputGroupSelect01">
+                        <option selected>OCC</option>
+                        <option value="1">IBM</option>
+                        <option value="2">IBM</option>
+                        <option value="3">IBM</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="inputGroupSelect01">Ciudad</label>
+                    <select class="form-select" id="inputGroupSelect01">
+                        <option selected>Tampico</option>
+                        <option value="1">Altamira</option>
+                        <option value="2">Madero</option>
+                        <option value="3">Monterrey</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="inputGroupSelect01">Empleo</label>
+                    <select class="form-select" id="inputGroupSelect01">
+                        <option selected>Analista de Datos</option>
+                        <option value="1">Analista de Datos</option>
+                        <option value="2">Analista de Datos</option>
+                        <option value="3">Analista de Datos</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="inputGroupSelect01">Mes</label>
+                    <select class="form-select" id="inputGroupSelect01">
+                        <option selected>Enero</option>
+                        <option value="1">Febrero</option>
+                        <option value="2">Marzo</option>
+                        <option value="3">Abril</option>
+                        <option value="3">Mayo</option>
+                        <option value="3">Junio</option>
+                        <option value="3">Julio</option>
+                        <option value="3">Agosto</option>
+                        <option value="3">Septiembre</option>
+                        <option value="3">Octubre</option>
+                        <option value="3">Noviembre</option>
+                        <option value="3">Diciembre</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="inputGroupSelect01">Año</label>
+                    <select class="form-select" id="inputGroupSelect01">
+                        <option selected>2022</option>
+                        <option value="1">2021</option>
+                        <option value="2">2020</option>
+                        <option value="3">2019</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <br>
+    <br>
+
+
     <form  method="POST" action="/empleos">
     @csrf
     <div class="container text-center">
