@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('employments', function (Blueprint $table) {
             $table->id();
-            $table->text('name');
+            $table->text('value');
             $table->timestamps();
         });
     }

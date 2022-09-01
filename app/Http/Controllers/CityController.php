@@ -14,7 +14,11 @@ class CityController extends Controller
      */
     public function index()
     {
-        //
+        $cities = City::orderBy('id', 'desc')->get();
+        return view('cities.index', [
+            'cities' => $cities,
+            'title' => 'Ciudades',
+        ]);
     }
 
     /**
@@ -24,7 +28,7 @@ class CityController extends Controller
      */
     public function create()
     {
-        //
+        return view('cities.create', []);
     }
 
     /**
@@ -35,7 +39,8 @@ class CityController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        City::create($request->all());
+        return redirect()->route('ciudades.index');
     }
 
     /**
@@ -78,8 +83,9 @@ class CityController extends Controller
      * @param  \App\Models\City  $city
      * @return \Illuminate\Http\Response
      */
-    public function destroy(City $city)
+    public function destroy($id)
     {
-        //
+        City::destroy($id);
+        return redirect()->route('ciudades.index');
     }
 }

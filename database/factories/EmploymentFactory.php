@@ -17,7 +17,7 @@ class EmploymentFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name(),
+            'value' => $this->faker->name(),
 
         ];
     }
