@@ -14,8 +14,11 @@ class CareerController extends Controller
      */
     public function index()
     {
-        $careers = Career::all();
-        return view('careers.index', compact('careers'));
+        $careers = Career::orderBy('id', 'desc')->get();
+        return view('careers.index', [
+            'careers' => $careers,
+            'title' => 'Carreras',
+        ]);
     }
 
     /**
@@ -25,7 +28,7 @@ class CareerController extends Controller
      */
     public function create()
     {
-        //
+        return view('careers.create', []);
     }
 
     /**
@@ -36,7 +39,8 @@ class CareerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Career::create($request->all());
+        return redirect()->route('carreras.index');
     }
 
     /**
@@ -79,8 +83,9 @@ class CareerController extends Controller
      * @param  \App\Models\Career  $career
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Career $career)
+    public function destroy($id)
     {
-        //
+        Career::destroy($id);
+        return redirect()->route('carreras.index');
     }
 }

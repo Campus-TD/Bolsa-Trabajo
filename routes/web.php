@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('cursos', \App\Http\Controllers\CareerController::class);
+Route::resource('carreras', \App\Http\Controllers\CareerController::class);
 
 Route::middleware([
     'auth:sanctum',
