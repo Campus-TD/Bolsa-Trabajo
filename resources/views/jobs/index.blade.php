@@ -17,8 +17,9 @@
             <div class="flex">
 
                 <div class="mt-5">
-                    <button onclick="location.href='{{ route('ciudades.create') }}'" type="button"
-                        class="inline-flex rounded bg-violet-600 py-2 px-3 text-sm font-medium text-white shadow-sm transition-all duration-500 hover:bg-violet-300 focus:outline-none">Nuevo</button>
+                    <button onclick="location.href='{{ route('trabajos.create') }}'" type="button"
+                        class="inline-flex rounded bg-violet-600 py-2 px-3 text-sm font-medium text-white shadow-sm transition-all duration-500 hover:bg-violet-300 focus:outline-none">Nuevo
+                        Trabajo</button>
                 </div>
 
             </div>
@@ -35,12 +36,12 @@
                     $bandera = true;
                     $color = 'bg-gray-100';
                 @endphp
-                @foreach ($employments as $employment)
+                @foreach ($jobs as $job)
                     <div class="{{ $color }} px-4 py-5 grid grid-cols-12">
-                        <div class="text-sm  font-medium text-gray-500">{{ $employment->id }}</div>
-                        <div class="mt-1 text-sm col-span-8 text-gray-900 sm:mt-0">{{ $employment->value }}</div>
+                        <div class="text-sm  font-medium text-gray-500">{{ $job->id }}</div>
+                        <div class="mt-1 text-sm col-span-8 text-gray-900 sm:mt-0">{{ $job->value }}</div>
                         <div class="mt-1 sm:mt-0">
-                            <form action="/empleos/{{ $employment->id }}" method="POST">
+                            <form action="/trabajos/{{ $job->id }}" method="POST">
                                 @csrf
                                 {{ method_field('DELETE') }}
                                 <button type="submit"

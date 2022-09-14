@@ -14,7 +14,11 @@ class JobController extends Controller
      */
     public function index()
     {
-        //
+        $jobs = Job::orderBy('id', 'desc')->get();
+        return view('jobs.index', [
+            'jobs' => $jobs,
+            'title' => 'Bolsa de Trabajo',
+        ]);
     }
 
     /**
@@ -24,7 +28,7 @@ class JobController extends Controller
      */
     public function create()
     {
-        //
+        return view('jobs.create', []);
     }
 
     /**
@@ -35,7 +39,8 @@ class JobController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Job::create($request->all());
+        return redirect()->route('trabajos.index');
     }
 
     /**
@@ -78,8 +83,9 @@ class JobController extends Controller
      * @param  \App\Models\Job  $job
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Job $job)
+    public function destroy($id)
     {
-        //
+        Job::destroy($id);
+        return redirect()->route('trabajos.index');
     }
 }
