@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Job;
+use App\Models\Task;
 use Illuminate\Http\Request;
 
-class JobController extends Controller
+class TaskController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class JobController extends Controller
      */
     public function index()
     {
-        $jobs = Job::orderBy('id', 'desc')->get();
+        $jobs = Task::orderBy('id', 'desc')->get();
         return view('jobs.index', [
             'jobs' => $jobs,
             'title' => 'Bolsa de Trabajo',
@@ -39,7 +39,7 @@ class JobController extends Controller
      */
     public function store(Request $request)
     {
-        Job::create($request->all());
+        Task::create($request->all());
         return redirect()->route('trabajos.index');
     }
 
@@ -49,7 +49,7 @@ class JobController extends Controller
      * @param  \App\Models\Job  $job
      * @return \Illuminate\Http\Response
      */
-    public function show(Job $job)
+    public function show(Task $job)
     {
         //
     }
@@ -60,7 +60,7 @@ class JobController extends Controller
      * @param  \App\Models\Job  $job
      * @return \Illuminate\Http\Response
      */
-    public function edit(Job $job)
+    public function edit(Task $job)
     {
         //
     }
@@ -72,7 +72,7 @@ class JobController extends Controller
      * @param  \App\Models\Job  $job
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Job $job)
+    public function update(Request $request, Task $job)
     {
         //
     }
@@ -85,7 +85,7 @@ class JobController extends Controller
      */
     public function destroy($id)
     {
-        Job::destroy($id);
+        Task::destroy($id);
         return redirect()->route('trabajos.index');
     }
 }
