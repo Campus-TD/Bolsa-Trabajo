@@ -15,7 +15,7 @@ class EmploymentController extends Controller
     public function index()
     {
         $employments = Employment::orderBy('id', 'desc')->get();
-        return view('employments.index', [
+        return view('empleo.index', [
             'employments' => $employments,
             'title' => 'Empleos',
         ]);
@@ -28,7 +28,7 @@ class EmploymentController extends Controller
      */
     public function create()
     {
-        return view('employments.create', []);
+        return view('empleo.create', []);
     }
 
     /**
@@ -40,7 +40,7 @@ class EmploymentController extends Controller
     public function store(Request $request)
     {
         Employment::create($request->all());
-        return redirect()->route('empleos.index');
+        return redirect()->route('empleo.index');
     }
 
     /**

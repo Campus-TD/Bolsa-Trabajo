@@ -20,7 +20,7 @@
             <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
                 <div class="flex justify-center">
                     <div class="">
-                        <form action="{{ route('empleos.store') }}" method="POST">
+                        <form action="{{ route('tasks.store') }}" method="POST">
                             @csrf
                             <div class="overflow-hidden rounded shadow-2xl shadow-cyan-800">
                                 <div class="bg-white px-16 py-14">

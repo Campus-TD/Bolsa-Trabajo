@@ -10,10 +10,38 @@
                     </a>
                 </div>
 
-                <!-- Navigation Links -->
+                <!-- Empleos Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('empleos') }}" :active="request()->routeIs('empleos')">
                         {{ __('Empleos') }}
+                    </x-jet-nav-link>
+                </div>
+
+                <!-- Carreras Links -->
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('carreras.index') }}" :active="request()->routeIs('carreras')">
+                        {{ __('Carreras') }}
+                    </x-jet-nav-link>
+                </div>
+
+                <!-- Ciudades Links -->
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('ciudades.index') }}" :active="request()->routeIs('ciudades')">
+                        {{ __('Ciudades') }}
+                    </x-jet-nav-link>
+                </div>
+
+                <!-- Empleos Links -->
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('empleo.index') }}" :active="request()->routeIs('empleo')">
+                        {{ __('Empleo') }}
+                    </x-jet-nav-link>
+                </div>
+
+                <!-- Bolsas de Trabajo Links -->
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('tasks.index') }}" :active="request()->routeIs('tasks')">
+                        {{ __('Bolsa de Trabajo') }}
                     </x-jet-nav-link>
                 </div>
             </div>
