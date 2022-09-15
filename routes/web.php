@@ -16,7 +16,7 @@ use App\Http\Livewire\Jobs;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Route::resource('empleos', 'App\Http\Controllers\JobController');
@@ -27,7 +27,7 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/empleos', Jobs::class);
+    Route::get('/empleos', Jobs::class)->name('empleos');
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
