@@ -17,10 +17,9 @@
                 <div class="input-group mb-3">
                     <label class="input-group-text" for="inputGroupSelect01">Carrera</label>
                     <select class="form-select" id="inputGroupSelect01">
-                        <option selected>ISC</option>
-                        <option value="1">ISC</option>
-                        <option value="2">ISC</option>
-                        <option value="3">IG</option>
+                        @foreach ($careers as $carrera)
+                            <option value="{{ $carrera->id }}">{{ $carrera->acronym }}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -28,10 +27,9 @@
                 <div class="input-group mb-3">
                     <label class="input-group-text" for="inputGroupSelect01">Bolsa de Trabajo</label>
                     <select class="form-select" id="inputGroupSelect01">
-                        <option selected>OCC</option>
-                        <option value="1">IBM</option>
-                        <option value="2">IBM</option>
-                        <option value="3">IBM</option>
+                        @foreach ($tasks as $bolsas)
+                            <option value="{{ $bolsas->id }}">{{ $bolsas->value }}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -39,10 +37,9 @@
                 <div class="input-group mb-3">
                     <label class="input-group-text" for="inputGroupSelect01">Ciudad</label>
                     <select class="form-select" id="inputGroupSelect01">
-                        <option selected>Tampico</option>
-                        <option value="1">Altamira</option>
-                        <option value="2">Madero</option>
-                        <option value="3">Monterrey</option>
+                        @foreach ($cities as $citie)
+                            <option value="{{ $citie->id }}">{{ $citie->value }}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -52,10 +49,9 @@
                 <div class="input-group mb-3">
                     <label class="input-group-text" for="inputGroupSelect01">Empleo</label>
                     <select class="form-select" id="inputGroupSelect01">
-                        <option selected>Analista de Datos</option>
-                        <option value="1">Analista de Datos</option>
-                        <option value="2">Analista de Datos</option>
-                        <option value="3">Analista de Datos</option>
+                        @foreach ($employments as $job)
+                            <option value="{{ $job->id }}">{{ $job->value }}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>

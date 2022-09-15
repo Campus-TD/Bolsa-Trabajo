@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Career;
+use App\Models\City;
+use App\Models\Employment;
 use App\Models\Job;
+use App\Models\Task;
 
 class JobController extends Controller
 {
@@ -24,7 +28,13 @@ class JobController extends Controller
      */
     public function create()
     {
-        return view('form');
+        //Retornar a una vista con las carreras cargadas
+        return view('form', [
+            'careers' => Career::all(),
+            'cities' => City::all(),
+            'employments' => Employment::all(),
+            'tasks' => Task::all(),
+        ]);
     }
 
     /**
