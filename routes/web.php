@@ -20,6 +20,11 @@ Route::get('/', function () {
 });
 
 Route::resource('empleos', 'App\Http\Controllers\JobController');
+Route::resource('carreras', 'App\Http\Controllers\CareerController');
+Route::resource('ciudades', 'App\Http\Controllers\CityController');
+Route::resource('empleo', 'App\Http\Controllers\EmploymentController');
+Route::resource('tasks', 'App\Http\Controllers\TaskController');
+Route::resource('years', 'App\Http\Controllers\YearController');
 Route::post('empleos/create', 'App\Http\Controllers\JobController@store');
 
 Route::middleware([

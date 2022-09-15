@@ -15,7 +15,7 @@ class TaskController extends Controller
     public function index()
     {
         $jobs = Task::orderBy('id', 'desc')->get();
-        return view('jobs.index', [
+        return view('trasks.index', [
             'jobs' => $jobs,
             'title' => 'Bolsa de Trabajo',
         ]);
@@ -28,7 +28,7 @@ class TaskController extends Controller
      */
     public function create()
     {
-        return view('jobs.create', []);
+        return view('trasks.create', []);
     }
 
     /**
@@ -40,7 +40,7 @@ class TaskController extends Controller
     public function store(Request $request)
     {
         Task::create($request->all());
-        return redirect()->route('trabajos.index');
+        return redirect()->route('trasks.index');
     }
 
     /**
@@ -86,6 +86,6 @@ class TaskController extends Controller
     public function destroy($id)
     {
         Task::destroy($id);
-        return redirect()->route('trabajos.index');
+        return redirect('/tasks');
     }
 }

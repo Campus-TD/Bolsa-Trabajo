@@ -86,6 +86,6 @@ class CareerController extends Controller
     public function destroy($id)
     {
         Career::destroy($id);
-        return redirect()->route('carreras.index');
+        return redirect('/carreras');
     }
 }

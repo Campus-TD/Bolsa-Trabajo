@@ -86,6 +86,6 @@ class EmploymentController extends Controller
     public function destroy($id)
     {
         Employment::destroy($id);
-        return redirect()->route('empleos.index');
+        return redirect('/empleo');
     }
 }

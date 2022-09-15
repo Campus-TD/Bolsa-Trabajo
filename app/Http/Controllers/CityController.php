@@ -86,6 +86,6 @@ class CityController extends Controller
     public function destroy($id)
     {
         City::destroy($id);
-        return redirect()->route('ciudades.index');
+        return redirect('/ciudades');
     }
 }

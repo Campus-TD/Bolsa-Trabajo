@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Age;
+use App\Models\Year;
 use Illuminate\Http\Request;
 
-class AgeController extends Controller
+class YearController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class AgeController extends Controller
      */
     public function index()
     {
-        $ages = Age::orderBy('id', 'desc')->get();
-        return view('ages.index', [
+        $ages = Year::orderBy('id', 'desc')->get();
+        return view('years.index', [
             'ages' => $ages,
             'title' => 'Años',
         ]);
@@ -28,7 +28,7 @@ class AgeController extends Controller
      */
     public function create()
     {
-        return view('ages.create', []);
+        return view('years.create', []);
     }
 
     /**
@@ -39,8 +39,8 @@ class AgeController extends Controller
      */
     public function store(Request $request)
     {
-        Age::create($request->all());
-        return redirect()->route('años.index');
+        Year::create($request->all());
+        return redirect()->route('years.index');
     }
 
     /**
@@ -49,7 +49,7 @@ class AgeController extends Controller
      * @param  \App\Models\Age  $age
      * @return \Illuminate\Http\Response
      */
-    public function show(Age $age)
+    public function show(Year $age)
     {
         //
     }
@@ -60,7 +60,7 @@ class AgeController extends Controller
      * @param  \App\Models\Age  $age
      * @return \Illuminate\Http\Response
      */
-    public function edit(Age $age)
+    public function edit(Year $age)
     {
         //
     }
@@ -72,7 +72,7 @@ class AgeController extends Controller
      * @param  \App\Models\Age  $age
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Age $age)
+    public function update(Request $request, Year $age)
     {
         //
     }
@@ -85,7 +85,7 @@ class AgeController extends Controller
      */
     public function destroy($id)
     {
-        Age::destroy($id);
-        return redirect()->route('años.index');
+        Year::destroy($id);
+        return redirect('/years');
     }
 }
