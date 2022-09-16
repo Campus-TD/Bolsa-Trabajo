@@ -34,9 +34,6 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('/empleos', Jobs::class)->name('empleos');
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
     Route::get('/form', function () {
         return view('form');
     })->name('form');

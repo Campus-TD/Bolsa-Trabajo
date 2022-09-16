@@ -165,8 +165,28 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
+            <x-jet-responsive-nav-link href="{{ route('empleos') }}" :active="request()->routeIs('empleos')">
+                {{ __('Empleos') }}
+            </x-jet-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+            <x-jet-responsive-nav-link href="{{ route('carreras.index') }}" :active="request()->routeIs('carreras')">
+                {{ __('Carreras') }}
+            </x-jet-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+            <x-jet-responsive-nav-link href="{{ route('ciudades.index') }}" :active="request()->routeIs('ciudades')">
+                {{ __('Ciudades') }}
+            </x-jet-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+            <x-jet-responsive-nav-link href="{{ route('empleo.index') }}" :active="request()->routeIs('empleo')">
+                {{ __('Empleo') }}
+            </x-jet-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+            <x-jet-responsive-nav-link href="{{ route('tasks.index') }}" :active="request()->routeIs('tasks')">
+                {{ __('Bolsa de Trabajo') }}
             </x-jet-responsive-nav-link>
         </div>
 
@@ -188,7 +208,7 @@
             <div class="mt-3 space-y-1">
                 <!-- Account Management -->
                 <x-jet-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
-                    {{ __('Profile') }}
+                    {{ __('Perfil') }}
                 </x-jet-responsive-nav-link>
 
                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
@@ -203,7 +223,7 @@
 
                     <x-jet-responsive-nav-link href="{{ route('logout') }}"
                                    @click.prevent="$root.submit();">
-                        {{ __('Log Out') }}
+                        {{ __('Cerrar sesión') }}
                     </x-jet-responsive-nav-link>
                 </form>
 
