@@ -99,7 +99,7 @@
             <div class="col-12">
                 <div class="input-group">
                     <span class="input-group-text">Empleo</span>
-                    <input type="text" aria-label="First name" class="form-control" name="jobname" required>
+                    <input type="text" aria-label="First name" class="form-control" name="jobname">
                 </div>
             </div>
         </div>
@@ -108,13 +108,13 @@
             <div class="col-6">
                 <div class="input-group">
                     <span class="input-group-text">Empresa</span>
-                    <input type="text" aria-label="First name" class="form-control" name="business" required>
+                    <input type="text" aria-label="First name" class="form-control" name="business">
                 </div>
             </div>
             <div class="col-6">
                 <div class="input-group">
                     <span class="input-group-text">Correo Electrónico</span>
-                    <input type="text" aria-label="First name" class="form-control" name="email" required>
+                    <input type="text" aria-label="First name" class="form-control" name="email">
                 </div>
             </div>
         </div>
