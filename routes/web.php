@@ -24,7 +24,7 @@ Route::resource('years', 'App\Http\Controllers\YearController');
 Route::post('empleos/create', 'App\Http\Controllers\JobController@store');
 
 Route::get('/', function () {
-    return view('auth.login');
+    return redirect('/empleos');
 });
 
 
