@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <title>{{ $title }}</title>
-</head>
-
-<body class="bg-gray-100">
-    <!-- This example requires Tailwind CSS v2.0+ -->
+<x-app-layout>
     <div class="overflow-hidden bg-white shadow-lg sm:rounded-lg sm:mx-12 md:mx-52 mt-10 ">
         <div class="px-4 py-5 sm:px-6">
             <h3 class="text-4xl font-medium leading-6 text-gray-900">{{ $title }}</h3>
@@ -64,7 +52,5 @@
             </dl>
         </div>
     </div>
-
-</body>
-
-</html>
+    <br><br>
+</x-app-layout>
