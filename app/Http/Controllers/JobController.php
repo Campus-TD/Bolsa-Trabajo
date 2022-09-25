@@ -79,7 +79,8 @@ class JobController extends Controller
      */
     public function edit($id)
     {
-        //
+        $job = Job::find($id);
+        return view('edit')->with('job', $job);
     }
 
     /**
@@ -91,7 +92,9 @@ class JobController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $job = Job::find($id);
+        $job->update($request->all());
+        return redirect()->route('empleos');
     }
 
     /**
