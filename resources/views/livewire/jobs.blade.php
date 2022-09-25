@@ -21,7 +21,8 @@
                  <h5 class="card-title font-weight-bold">{{$job->jobname}}</h5>
                  <p class="card-text"><b>{{$job->business}}</b></p>
                  <p class="card-text">{{$job->email}}</p>
-                 <a href="#" class="btn btn-secondary btn-block">Ver Detalles</a>
+                 <a href="#" class="btn btn-primary btn-block">Ver Detalles</a>
+                 <a href="/empleos/{{$job->id}}/edit" class="btn btn-warning">Editar</a>
               </div>
             </div>
             <br>
