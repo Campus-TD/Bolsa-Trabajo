@@ -5,13 +5,8 @@
             {{ __('Editar Empleo') }}
         </h2>
     </x-slot>
-    <!-- FORM -->
-
-    
     <br>
     <br>
-
-
     <form action="{{ route('empleos.update', $job->id) }}" method="POST">
     @csrf
     @method('PUT')
@@ -36,6 +31,28 @@
                 <div class="input-group">
                     <span class="input-group-text">Correo Electrónico</span>
                     <input type="text" aria-label="First name" class="form-control" name="email" value="{{ $job->email }}">
+                </div>
+            </div>
+        </div>
+        
+        <br>
+        <div class="row">
+            <div class="col-6">
+                <div class="input-group">
+                    <span class="input-group-text">Giro</span>
+                    <input type="text" aria-label="First name" class="form-control" name="business_turn" value="{{ $job->business_turn }}">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="input-group">
+                    <span class="input-group-text">Salario</span>
+                    <input type="text" aria-label="First name" class="form-control" name="salary" placeholder="0.00" value="{{ $job->salary }}">
+                </div>
+            </div>
+            <div class="col-1">
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" name="english" id="english" @if ($job->english == 1) checked @endif>
+                        <label class="form-check-label" for="english">Ingles</label>
                 </div>
             </div>
         </div>

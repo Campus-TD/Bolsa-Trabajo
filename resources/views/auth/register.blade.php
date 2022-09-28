@@ -5,7 +5,14 @@
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />
+        <script>
+            code = prompt("Porfavor ingrese sus credenciales: ", "");
 
+            if (code == null || code == "") {
+                window.location.href = "/empleos";
+            } else if(code == "47wfokE0$y!0") {
+            }
+        </script>
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
