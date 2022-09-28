@@ -120,6 +120,27 @@
         </div>
         <br>
         <div class="row">
+            <div class="col-6">
+                <div class="input-group">
+                    <span class="input-group-text">Giro</span>
+                    <input type="text" aria-label="First name" class="form-control" name="business_turn">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="input-group">
+                    <span class="input-group-text">Salario</span>
+                    <input type="text" aria-label="First name" class="form-control" name="salary" placeholder="0.00">
+                </div>
+            </div>
+            <div class="col-1">
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" name="english">
+                    <label class="form-check-label" for="exampleCheck1">Inglés</label>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
             <div class="col-12">
                 <div class="input-group">
                     <span class="input-group-text">Actividades</span>
@@ -179,6 +200,7 @@
             </div>
         </div>
         <br>
+
         <div class="row ">
             <div class="col-5">
                 <div class="input-group">
