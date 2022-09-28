@@ -54,6 +54,9 @@ class JobController extends Controller
                 "softskills" => $request->get("softskills"),
                 "hardskills" => $request->get("hardskills"),
                 "knowledge" => $request->get("knowledge"),
+                "salary" => $request->get("salary"),
+                "business_turn" => $request->get("business_turn"),
+                "english" => $request->get("english") == "on" ? 1 : 0,
             ]
         );
         $job->save();
@@ -93,7 +96,20 @@ class JobController extends Controller
     public function update(Request $request, $id)
     {
         $job = Job::find($id);
-        $job->update($request->all());
+        $job->update(
+            [
+                "jobname" => $request->get("jobname"),
+                "business" => $request->get("business"),
+                "email" => $request->get("email"),
+                "activities" => $request->get("activities"),
+                "softskills" => $request->get("softskills"),
+                "hardskills" => $request->get("hardskills"),
+                "knowledge" => $request->get("knowledge"),
+                "salary" => $request->get("salary"),
+                "business_turn" => $request->get("business_turn"),
+                "english" => $request->get("english") == "on" ? 1 : 0,
+            ]
+        );
         return redirect()->route('empleos');
     }
 
