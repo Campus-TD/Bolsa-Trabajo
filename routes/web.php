@@ -22,6 +22,11 @@ Route::resource('empleo', 'App\Http\Controllers\EmploymentController');
 Route::resource('tasks', 'App\Http\Controllers\TaskController');
 Route::resource('years', 'App\Http\Controllers\YearController');
 
+Route::resource('softskills', 'App\Http\Controllers\SoftskillController');
+Route::resource('hardskills', 'App\Http\Controllers\HardskillController');
+Route::resource('knowledges', 'App\Http\Controllers\KnowledgeController');
+
+
 Route::get('/', function () {
     return redirect('/empleos');
 });

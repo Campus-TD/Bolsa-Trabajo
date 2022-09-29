@@ -51,6 +51,13 @@
                         {{ __('Habilidades Blandas') }}
                     </x-jet-nav-link>
                 </div>
+
+                <!-- Habilidades Duras Links -->
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link  style="text-decoration: none;" href="{{ route('hardskills.index') }}" :active="request()->routeIs('hardskills')">
+                        {{ __('Habilidades Duras') }}
+                    </x-jet-nav-link>
+                </div>
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
@@ -199,6 +206,11 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-jet-responsive-nav-link style="text-decoration: none;" href="{{ route('softskills.index') }}" :active="request()->routeIs('softskills')">
                 {{ __('Habilidades Blandas') }}
+            </x-jet-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+            <x-jet-responsive-nav-link style="text-decoration: none;" href="{{ route('hardskills.index') }}" :active="request()->routeIs('hardskills')">
+                {{ __('Habilidades Duras') }}
             </x-jet-responsive-nav-link>
         </div>
 
