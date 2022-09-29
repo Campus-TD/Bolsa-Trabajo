@@ -18,11 +18,11 @@
             <div class="col-sm-3">
             <div class="card bg-light" style = "width: 18rem;">
               <div class="card-body">
-                 <h5 class="card-title font-weight-bold">{{$job->jobname}} @if ($job->approved == 1)
-                  <i class="bi bi-patch-check"></i>
-                   
-                 @endif</h5>
+                 <h5 class="card-title font-weight-bold text-truncate">{{$job->jobname}} 
                  <p class="card-text"><b>{{$job->business}}</b></p>
+                  @if ($job->approved == 1)
+                    <i class="bi bi-patch-check"></i>
+                  @endif</h5>
                  <p class="card-text">{{$job->email}}</p>
                  <a href="#" class="btn btn-primary btn-block">Ver Detalles</a>
                  <a href="/empleos/{{$job->id}}/edit" class="btn btn-warning">Editar</a>
