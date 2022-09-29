@@ -17,5 +17,9 @@ class Job extends Model
         'softskills',
         'hardskills',
         'knowledge',
+        'business_turn',
+        'salary',
+        'english',
+        'approved'
     ];
 }
