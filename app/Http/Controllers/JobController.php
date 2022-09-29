@@ -108,6 +108,7 @@ class JobController extends Controller
                 "salary" => $request->get("salary"),
                 "business_turn" => $request->get("business_turn"),
                 "english" => $request->get("english") == "on" ? 1 : 0,
+                "approved" => $request->get("approved") == "on" ? 1 : 0,
             ]
         );
         return redirect()->route('empleos');
