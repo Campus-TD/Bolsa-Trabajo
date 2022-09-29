@@ -12,36 +12,43 @@
 
                 <!-- Empleos Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('empleos') }}" :active="request()->routeIs('empleos')">
+                    <x-jet-nav-link  style="text-decoration: none;" href="{{ route('empleos') }}" :active="request()->routeIs('empleos')">
                         {{ __('Empleos') }}
                     </x-jet-nav-link>
                 </div>
 
                 <!-- Carreras Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('carreras.index') }}" :active="request()->routeIs('carreras')">
+                    <x-jet-nav-link  style="text-decoration: none;" href="{{ route('carreras.index') }}" :active="request()->routeIs('carreras')">
                         {{ __('Carreras') }}
                     </x-jet-nav-link>
                 </div>
 
                 <!-- Ciudades Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('ciudades.index') }}" :active="request()->routeIs('ciudades')">
+                    <x-jet-nav-link  style="text-decoration: none;" href="{{ route('ciudades.index') }}" :active="request()->routeIs('ciudades')">
                         {{ __('Ciudades') }}
                     </x-jet-nav-link>
                 </div>
 
                 <!-- Empleos Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('empleo.index') }}" :active="request()->routeIs('empleo')">
+                    <x-jet-nav-link  style="text-decoration: none;" href="{{ route('empleo.index') }}" :active="request()->routeIs('empleo')">
                         {{ __('Empleo') }}
                     </x-jet-nav-link>
                 </div>
 
                 <!-- Bolsas de Trabajo Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('tasks.index') }}" :active="request()->routeIs('tasks')">
+                    <x-jet-nav-link  style="text-decoration: none;" href="{{ route('tasks.index') }}" :active="request()->routeIs('tasks')">
                         {{ __('Bolsa de Trabajo') }}
+                    </x-jet-nav-link>
+                </div>
+
+                <!-- Habilidades Blandas Links -->
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link  style="text-decoration: none;" href="{{ route('softskills.index') }}" :active="request()->routeIs('softskills')">
+                        {{ __('Habilidades Blandas') }}
                     </x-jet-nav-link>
                 </div>
             </div>
@@ -50,7 +57,7 @@
                 <!-- Teams Dropdown -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
                     <div class="ml-3 relative">
-                        <x-jet-dropdown align="right" width="60">
+                        <x-jet-dropdown  style="text-decoration: none;" align="right" width="60">
                             <x-slot name="trigger">
                                 <span class="inline-flex rounded-md">
                                     <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:bg-gray-50 hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition">
@@ -124,7 +131,7 @@
                                 {{ __('Panel de Usuario') }}
                             </div>
 
-                            <x-jet-dropdown-link href="{{ route('profile.show') }}">
+                            <x-jet-dropdown-link  style="text-decoration: none;" href="{{ route('profile.show') }}">
                                 {{ __('Configuración') }}
                             </x-jet-dropdown-link>
 
@@ -140,7 +147,7 @@
                             <form method="POST" action="{{ route('logout') }}" x-data>
                                 @csrf
 
-                                <x-jet-dropdown-link href="{{ route('logout') }}"
+                                <x-jet-dropdown-link style="text-decoration: none;" href="{{ route('logout') }}"
                                          @click.prevent="$root.submit();">
                                     {{ __('Cerrar Sesión') }}
                                 </x-jet-dropdown-link>
@@ -165,28 +172,33 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-jet-responsive-nav-link href="{{ route('empleos') }}" :active="request()->routeIs('empleos')">
+            <x-jet-responsive-nav-link style="text-decoration: none;" href="{{ route('empleos') }}" :active="request()->routeIs('empleos')">
                 {{ __('Empleos') }}
             </x-jet-responsive-nav-link>
         </div>
         <div class="pt-2 pb-3 space-y-1">
-            <x-jet-responsive-nav-link href="{{ route('carreras.index') }}" :active="request()->routeIs('carreras')">
+            <x-jet-responsive-nav-link style="text-decoration: none;" href="{{ route('carreras.index') }}" :active="request()->routeIs('carreras')">
                 {{ __('Carreras') }}
             </x-jet-responsive-nav-link>
         </div>
         <div class="pt-2 pb-3 space-y-1">
-            <x-jet-responsive-nav-link href="{{ route('ciudades.index') }}" :active="request()->routeIs('ciudades')">
+            <x-jet-responsive-nav-link style="text-decoration: none;" href="{{ route('ciudades.index') }}" :active="request()->routeIs('ciudades')">
                 {{ __('Ciudades') }}
             </x-jet-responsive-nav-link>
         </div>
         <div class="pt-2 pb-3 space-y-1">
-            <x-jet-responsive-nav-link href="{{ route('empleo.index') }}" :active="request()->routeIs('empleo')">
+            <x-jet-responsive-nav-link style="text-decoration: none;" href="{{ route('empleo.index') }}" :active="request()->routeIs('empleo')">
                 {{ __('Empleo') }}
             </x-jet-responsive-nav-link>
         </div>
         <div class="pt-2 pb-3 space-y-1">
-            <x-jet-responsive-nav-link href="{{ route('tasks.index') }}" :active="request()->routeIs('tasks')">
+            <x-jet-responsive-nav-link style="text-decoration: none;" href="{{ route('tasks.index') }}" :active="request()->routeIs('tasks')">
                 {{ __('Bolsa de Trabajo') }}
+            </x-jet-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+            <x-jet-responsive-nav-link style="text-decoration: none;" href="{{ route('softskills.index') }}" :active="request()->routeIs('softskills')">
+                {{ __('Habilidades Blandas') }}
             </x-jet-responsive-nav-link>
         </div>
 
@@ -207,12 +219,12 @@
 
             <div class="mt-3 space-y-1">
                 <!-- Account Management -->
-                <x-jet-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
+                <x-jet-responsive-nav-link style="text-decoration: none;" href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
                     {{ __('Perfil') }}
                 </x-jet-responsive-nav-link>
 
                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
-                    <x-jet-responsive-nav-link href="{{ route('api-tokens.index') }}" :active="request()->routeIs('api-tokens.index')">
+                    <x-jet-responsive-nav-link style="text-decoration: none;" href="{{ route('api-tokens.index') }}" :active="request()->routeIs('api-tokens.index')">
                         {{ __('API Tokens') }}
                     </x-jet-responsive-nav-link>
                 @endif
@@ -221,7 +233,7 @@
                 <form method="POST" action="{{ route('logout') }}" x-data>
                     @csrf
 
-                    <x-jet-responsive-nav-link href="{{ route('logout') }}"
+                    <x-jet-responsive-nav-link style="text-decoration: none;" href="{{ route('logout') }}"
                                    @click.prevent="$root.submit();">
                         {{ __('Cerrar sesión') }}
                     </x-jet-responsive-nav-link>

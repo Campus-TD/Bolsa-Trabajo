@@ -12,10 +12,10 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
         <!-- Styles -->
         @livewireStyles
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"/>
 
     </head>
     <body class="font-sans antialiased">
@@ -47,7 +47,7 @@
             <!-- Copyright -->
             <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.5);">
               © 2022 Copyright:
-              <a class="text-white" href="https://github.com/Campus-TD">Campus TD</a>
+              <a class="text-white" href="https://github.com/Campus-TD" style="text-decoration: none;">Campus TD</a>
             </div>
             <!-- Copyright -->
           </footer>
