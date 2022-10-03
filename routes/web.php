@@ -24,13 +24,28 @@ Route::resource('years', 'App\Http\Controllers\YearController');
 
 Route::resource('softskills', 'App\Http\Controllers\SoftskillController');
 Route::resource('hardskills', 'App\Http\Controllers\HardskillController');
-Route::resource('knowledges', 'App\Http\Controllers\KnowledgeController');
 
 
-Route::get('/', function () {
-    return redirect('/empleos');
+Route::redirect('/', '/empleos');
+Route::get('/empleos', Jobs::class)->name('empleos');
+
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/form', function () {
+        return view('form');
+    })->name('form');
 });
 
+
+
+
+/*Route::get('/', function () {
+    return redirect('/empleos');
+});
 
 Route::middleware([
     'auth:sanctum',
@@ -41,4 +56,4 @@ Route::middleware([
     Route::get('/form', function () {
         return view('form');
     })->name('form');
-});
+});*/
