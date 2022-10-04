@@ -1,20 +1,8 @@
-<!-- Si el usuario no está autenticado, solo puede ver los trabajos -->
-@if (Auth::guest())
-    @foreach ($jobs as $job)
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">{{ $job->title }}</h5>
-                <p class="card-text">{{ $job->description }}</p>
-            </div>
-        </div>
-    @endforeach
-
-<!-- Si el usuario está autenticado, puede ver los trabajos y aplicar a ellos -->
-@else
   <div>
       {{-- Stop trying to control. --}}
 
-      <!-- Add button in form-->
+      @auth
+          
       <div class="spacer" style="height: 30px;"></div>
       <div class="container">
           <div class="row">
@@ -27,24 +15,51 @@
       <div class="spacer" style="height: 20px;"></div>
       <div class="container">
           <div class="row">
-          @foreach($jobs as $job)
-              <div class="col-sm-3">
-              <div class="card bg-light" style = "width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title font-weight-bold text-truncate">{{$job->jobname}} 
-                  <p class="card-text"><b>{{$job->business}}</b></p>
-                    @if ($job->approved == 1)
-                      <i class="bi bi-patch-check"></i>
-                    @endif</h5>
-                  <p class="card-text">{{$job->email}}</p>
-                  <a href="#" class="btn btn-primary btn-block">Ver Detalles</a>
-                  <a href="/empleos/{{$job->id}}/edit" class="btn btn-warning">Editar</a>
-                </div>
-              </div>
-              <br>
-            </div>
-          @endforeach
+              @foreach ($jobs as $job)
+                  <div class="col-sm-3">
+                      <div class="card bg-light" style="width: 18rem;">
+                          <div class="card-body">
+                              <h5 class="card-title font-weight-bold text-truncate">{{ $job->jobname }}
+                                  <p class="card-text"><b>{{ $job->business }}</b></p>
+                                  @if ($job->approved == 1)
+                                      <i class="bi bi-patch-check"></i>
+                                  @endif
+                              </h5>
+                              <p class="card-text">{{ $job->email }}</p>
+                              <a href="#" class="btn btn-primary btn-block">Ver Detalles</a>
+                              <a href="/empleos/{{ $job->id }}/edit" class="btn btn-warning">Editar</a>
+                          </div>
+                      </div>
+                      <br>
+                  </div>
+              @endforeach
           </div>
-        </div>
+      </div>
   </div>
-@endif
+  @endauth
+
+    @guest
+    <div class="spacer" style="height: 20px;"></div>
+    <div class="container">
+        <div class="row">
+            @foreach ($jobs as $job)
+                <div class="col-sm-3">
+                    <div class="card bg-light" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title font-weight-bold text-truncate">{{ $job->jobname }}
+                                <p class="card-text"><b>{{ $job->business }}</b></p>
+                                @if ($job->approved == 1)
+                                    <i class="bi bi-patch-check"></i>
+                                @endif
+                            </h5>
+                            <p class="card-text">{{ $job->email }}</p>
+                            <a href="#" class="btn btn-primary btn-block">Ver Detalles</a>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            @endforeach
+        </div>
+    </div>
+    @endguest
+    
