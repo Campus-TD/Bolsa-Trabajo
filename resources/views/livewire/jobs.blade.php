@@ -22,13 +22,22 @@
                                         <i class="bi bi-patch-check" style="color: #ffab24;"></i>
                                     @endif
                                     {{ $job->jobname }}
-                                    <p class="card-text text-truncate"><b>{{ $job->business }}</b></p>
+                                    <p class="card-text text-truncate"><b>{{ $job->business }}</b>
+                                    </p>
                                 </h5>
+                                
+                                    
+                                @if($job->salary > 0)
+                                    <b>Salario: </b>${{ $job->salary }}
+                                @endif
                                 <p class="card-text text-truncate">{{ $job->email }}</p>
-                                <a href="#" class="btn btn-primary btn-block">Ver Detalles</a>
-                                <a href="/empleos/{{ $job->id }}/edit" class="btn btn-warning">Editar</a>
-
-
+                                <form action="/empleos/{{ $job->id }}" method="POST">
+                                    <a href="#" class="btn btn-success btn-block"><i class="fa fa-eye"></i></a>
+                                    <a href="/empleos/{{ $job->id }}/edit" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                </form>
                             </div>
                         </div>
                         <br>
