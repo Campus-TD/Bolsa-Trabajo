@@ -33,7 +33,7 @@
                                 <p class="card-text text-truncate">{{ $job->email }}</p>
                                 <form action="/empleos/{{ $job->id }}" method="POST">
                                     <a href="#" class="btn btn-success btn-block"><i class="fa fa-eye"></i></a>
-                                    <a href="/empleos/{{ $job->id }}/edit" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
+                                    <a href="/empleos/{{ $job->id }}/edit" class="btn btn-warning text-white"><i class="fa fa-pencil"></i></a>
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
