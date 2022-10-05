@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\JobController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Jobs;
 
@@ -24,7 +23,7 @@ Route::resource('years', 'App\Http\Controllers\YearController');
 
 Route::resource('softskills', 'App\Http\Controllers\SoftskillController');
 Route::resource('hardskills', 'App\Http\Controllers\HardskillController');
-
+Route::resource('reports', 'App\Http\Controllers\ReportController');
 
 Route::redirect('/', '/empleos');
 Route::get('/empleos', Jobs::class)->name('empleos');

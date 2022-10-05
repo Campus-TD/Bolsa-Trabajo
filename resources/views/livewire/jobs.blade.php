@@ -5,7 +5,8 @@
         <div class="container">
             <div class="row">
                 <div class="text-right">
-                    <a href="empleos/create" class="btn btn-success float-right">Agregar Empleo</a>
+                    <a href="empleos/create" class="btn btn-success">Agregar Empleo</a>
+                    <a href="reports" class="btn btn-secondary">Generar Reporte</a>
                 </div>
             </div>
         </div>
