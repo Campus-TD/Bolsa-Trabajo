@@ -5,7 +5,8 @@
         <div class="container">
             <div class="row">
                 <div class="text-right">
-                    <a href="empleos/create" class="btn btn-success float-right">Agregar Empleo</a>
+                    <a href="empleos/create" class="btn btn-success">Agregar Empleo</a>
+                    <a href="reports" class="btn btn-secondary">Generar Reporte</a>
                 </div>
             </div>
         </div>
@@ -15,22 +16,32 @@
             <div class="row">
                 @foreach ($jobs as $job)
                     <div class="col-sm-3">
-                        <div class="card bg-light" style="width: 18rem;">
+                        <div class="card bg-light" style="width: 18rem; height: 12rem;">
                             <div class="card-body">
                                 <h5 class="card-title font-weight-bold text-truncate">
                                     @if ($job->approved == 1)
                                         <i class="bi bi-patch-check" style="color: #ffab24;"></i>
                                     @endif
-                                    {{ $job->jobname }}
-                                    <p class="card-text text-truncate"><b>{{ $job->business }}</b>
-                                    </p>
+                                    {{ ucfirst($job->jobname )}}
+                                    @if ($job->business != "")
+                                        <p class="card-text text-truncate"><b>{{ ucfirst($job->business) }}</b></p>
+                                    @else
+                                        <div class="spacer" style="height: 30px;"></div>
+                                    @endif
                                 </h5>
                                 
                                     
                                 @if($job->salary > 0)
                                     <b>Salario: </b>${{ $job->salary }}
+                                @else
+                                    <div class="spacer" style="height: 30px;"></div>
                                 @endif
-                                <p class="card-text text-truncate">{{ $job->email }}</p>
+                                
+                                @if ($job->email != "")
+                                    <p class="card-text text-truncate">{{ strtolower($job->email) }}</p>
+                                @else
+                                    <div class="spacer" style="height: 30px;"></div>
+                                @endif
                                 <form action="/empleos/{{ $job->id }}" method="POST">
                                     <a href="#" class="btn btn-success btn-block"><i class="fa fa-eye"></i></a>
                                     <a href="/empleos/{{ $job->id }}/edit" class="btn btn-warning text-white"><i class="fa fa-pencil"></i></a>
