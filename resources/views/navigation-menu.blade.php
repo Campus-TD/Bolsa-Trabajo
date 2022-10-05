@@ -46,6 +46,13 @@
                         </x-jet-nav-link>
                     </div>
 
+                    <!-- Reportes Links -->
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-jet-nav-link  style="text-decoration: none;" href="{{ route('reports.index') }}" :active="request()->routeIs('reports')">
+                            {{ __('Reportes') }}
+                        </x-jet-nav-link>
+                    </div>
+
                     <!-- OPCIONES LINK -->
                     <div class="hidden sm:-my-px py-3 sm:ml-10 sm:flex">
                         <x-jet-dropdown>
