@@ -322,6 +322,16 @@
                         <x-jet-application-mark class="block h-9 w-auto" />
                     </div>
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-jet-nav-link style="text-decoration: none;" href="empleos">
+                            {{ __('Empleos') }}
+                        </x-jet-nav-link>
+                    </div>
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-jet-nav-link style="text-decoration: none;" href="reports">
+                            {{ __('Reportes') }}
+                        </x-jet-nav-link>
+                    </div>
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-jet-nav-link style="text-decoration: none;" href="{{ route('login') }}" :active="request()->routeIs('login')">
                             {{ __('Login') }}
                         </x-jet-nav-link>
