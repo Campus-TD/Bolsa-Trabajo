@@ -12,7 +12,6 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 
@@ -45,11 +44,11 @@
 
         @livewireScripts
 
-        <footer class="bg-light text-center text-white">
+        <footer class="bg-slate-400 text-center text-white">
             <!-- Copyright -->
             <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.5);">
               © 2022 Copyright:
-              <a class="text-white" href="https://github.com/Campus-TD" style="text-decoration: none;">Campus TD</a>
+              <a class="text-white" href="http://campustd.mx" target="_blank" style="text-decoration: none;">Campus TD</a>
             </div>
             <!-- Copyright -->
           </footer>
