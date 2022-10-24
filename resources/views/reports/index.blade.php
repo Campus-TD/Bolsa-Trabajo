@@ -23,12 +23,11 @@
         <h2 class="text-3xl font-bold text-slate-500">Reporte por Carrera</h2>
         <hr class="my-5 h-px border-0 bg-gray-200">
         <h2 class="text-2xl font-bold text-slate-500">Habilidades Blandas</h2>
-        <div class="flex flex-row  w-full mb-3">
-            <div class="h-auto w-2 bg-green-200 mr-5"></div>
+        <div class="flex flex-col  w-full mb-3">
             @foreach ($jobs as $job)
                     @if ($job->approved == 1 && $job->softskills != "")
                     <div class="flex flex-row align-middle items-center">
-                        <i class="fa-solid fa-caret-right text-xs text-orange-300 mr-3"></i>
+                        <i class="fa-solid fa-caret-right text-xs text-purple-300 mr-3"></i>
                         <p class="text-md">{{ ucfirst($job->softskills) }}</p>
                     </div>
                     @endif
@@ -36,12 +35,11 @@
         </div>
         <hr class="my-5 h-px border-0 bg-gray-200">
         <h2 class="text-2xl font-bold text-slate-500">Habilidades Duras</h2>
-        <div class="flex flex-row  w-full mb-3">
-            <div class="h-auto w-2 bg-orange-200 mr-5"></div>
+        <div class="flex flex-col  w-full mb-3">
             @foreach ($jobs as $job)
                     @if ($job->approved == 1 && $job->hardskills != "")
                     <div class="flex flex-row align-middle items-center">
-                        <i class="fa-solid fa-caret-right text-xs text-orange-300 mr-3"></i>
+                        <i class="fa-solid fa-caret-right text-xs text-red-300 mr-3"></i>
                         <p class="text-md">{{ ucfirst($job->hardskills) }}</p>
                     </div>
                     @endif
@@ -49,12 +47,11 @@
         </div>
         <hr class="my-5 h-px border-0 bg-gray-200">
         <h2 class="text-2xl font-bold text-slate-500">Conocimientos</h2>
-        <div class="flex flex-row  w-full mb-3">
-            <div class="h-auto w-2 bg-blue-200 mr-5"></div>
+        <div class="flex flex-col w-full mb-3">
             @foreach ($jobs as $job)
                     @if ($job->approved == 1 && $job->knowledge != "")
                     <div class="flex flex-row align-middle items-center">
-                        <i class="fa-solid fa-caret-right text-xs text-orange-300 mr-3"></i>
+                        <i class="fa-solid fa-caret-right text-xs text-green-300 mr-3"></i>
                         <p class="text-md">{{ ucfirst($job->knowledge) }}</p>
                     </div>
                     @endif
@@ -62,12 +59,11 @@
         </div>
         <hr class="my-5 h-px border-0 bg-gray-200">
         <h2 class="text-2xl font-bold text-slate-500">Actividades</h2>
-        <div class="flex flex-row  w-full mb-3">
-            <div class="h-auto w-2 bg-blue-200 mr-5"></div>
+        <div class="flex flex-col w-full mb-3">
             @foreach ($jobs as $job)
                     @if ($job->approved == 1 && $job->activities != "")
                     <div class="flex flex-row align-middle items-center">
-                        <i class="fa-solid fa-caret-right text-xs text-orange-300 mr-3"></i>
+                        <i class="fa-solid fa-caret-right text-xs text-blue-300 mr-3"></i>
                         <p class="text-md">{{ ucfirst($job->activities) }}</p>
                     </div>
                     @endif
